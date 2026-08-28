@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff7aa2" />
+  <title>Eine kleine Frage 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="password-screen" id="passwordScreen">
+    <div class="password-card">
+      <div class="lock-heart">💗</div>
+      <div class="eyebrow">Nur für dich ✨</div>
+      <h1 class="password-title">Eine kleine Überraschung wartet auf dich</h1>
+      <p class="password-text">Gib das Passwort ein. 💌</p>
+
+      <form id="passwordForm" class="password-form">
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Passwort"
+          autocomplete="current-password"
+          aria-label="Passwort"
+          required
+        />
+        <button type="submit" class="unlock-button">Überraschung öffnen 💕</button>
+      </form>
+
+      <div id="passwordError" class="password-error hidden">
+        Das Passwort stimmt leider nicht. Versuch es noch einmal. 🌷
+      </div>
+    </div>
+  </section>
+
+  <div class="floating-hearts" aria-hidden="true">
+    <span>♡</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span>
+  </div>
+
+  <main class="page hidden" id="mainPage">
+    <section class="card" aria-labelledby="title">
+      <div class="eyebrow">Eine kleine Einladung für dich ✨</div>
+
+      <div class="heart-badge" aria-hidden="true">♥</div>
+
+      <h1 id="title">Hast du am 5. September ein Date mit mir?</h1>
+
+      <p class="subtitle">
+        Ich würde dich sehr gerne um <strong>16:00 Uhr</strong> ausführen.
+        💗
+      </p>
+
+      <div class="date-box">
+        <div>
+          <span class="date-label">Datum</span>
+          <strong>5. September 2026</strong>
+        </div>
+        <div>
+          <span class="date-label">Uhrzeit</span>
+          <strong>16:00 Uhr</strong>
+        </div>
+      </div>
+
+      <form id="dateForm">
+        <input type="hidden" name="frage" value="Date am 5. September 2026" />
+        <input type="hidden" name="antwort" id="answerField" />
+        <input type="hidden" name="uhrzeit" id="timeField" />
+
+        <div class="choices" id="mainChoices">
+          <button type="button" class="choice yes" data-answer="Ja">
+            <span class="choice-icon">💖</span>
+            Ja, sehr gerne!
+          </button>
+
+          <button type="button" class="choice maybe" data-answer="Andere Uhrzeit">
+            <span class="choice-icon">🕰️</span>
+            Andere Uhrzeit
+          </button>
+
+          <button type="button" class="choice no" data-answer="Nein">
+            <span class="choice-icon">🌷</span>
+            Nein :(
+          </button>
+        </div>
+
+        <div class="time-panel hidden" id="timePanel">
+          <label for="customTime">Welche Uhrzeit wäre besser für dich?</label>
+          <div class="time-row">
+            <input id="customTime" type="time" min="00:00" max="23:59" />
+            <button type="button" id="submitTime" class="small-button">Antwort senden</button>
+          </div>
+          <button type="button" id="backButton" class="back-button">← Zurück</button>
+        </div>
+      </form>
+
+      <div class="status hidden" id="status" role="status" aria-live="polite"></div>
+
+      <p class="tiny-note">Ich freuee mich extreeeem askimmm. 🤍</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
